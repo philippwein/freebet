@@ -9,8 +9,7 @@ contract FREE_BET {
   }
 
   uint public balance;
-  uint private n256=10; // Set to 10 only for testing purposes!
-  //This should be set to the maximum possible amount (256)
+  uint private n256=256; // For testing purposes one might want to set this to a smaller value
   //After this number of blocks bets are automatically lost if they have not been claimed
   uint private bet_balance;
   uint private total_shares;
