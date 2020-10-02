@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Freebet</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./lib/web3.min.js"></script>
+    <script type="text/javascript" src="./lib/abi.js"></script>
+    <script type="text/javascript" src="./lib/main.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Freebet Dapp</h1>
+        <p class="lead">Decentralized coinflip betting via a liquidity pool / Randomness from FUTURE blockhashes combined with the players address</p>
+        <p class="lead">[This is a prototype prone to overflow/underflow vulnerabilites]</p>
+      </div>
+    </div>
+    <div class="container">
+      <div>
+        <h2>Place a bet</h2>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="bet_amount_input" placeholder="Amount in ETH">
+        </div>
+        <button type="button" id="place_bet_button" class="btn btn-primary">Place the bet</button>
+      </div>
+      <div>
+        <h2>Claim a bet</h2>
+        <button type="button" id="claim_bet_button" class="btn btn-primary">Claim</button>
+      </div>
+      <div>
+        <h2>State of your bet</h2>
+        <div>
+          Bet status: <span id="bet_status_output"></span>
+        </div>
+        <button type="button" id="get_data_button" class="btn btn-primary">Get Data</button>
+      </div>
+      <div>
+        <h2>Provide liquidity</h2>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="deposit_amount_input" placeholder="Amount in ETH">
+        </div>
+        <button type="button" id="provide_liquidity_button" class="btn btn-primary">Deposit ETH</button>
+      </div>
+      <div>
+        <h2>Withdraw liquidity</h2>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="withdraw_amount_input" placeholder="Amount in ETH">
+        </div>
+        <button type="button" id="withdraw_liquidity_button" class="btn btn-primary">Withdraw ETH</button>
+      </div>
+      <div>
+        <h2>Your liquidity overview</h2>
+        <div>
+          Your balance: <span id="deposit_output"></span>
+        </div>
+        <div>
+          Current max withdrawal amount: <span id="maxwithdraw_output"></span>
+        </div>
+        <button type="button" id="get_balance_data_button" class="btn btn-primary">Get Liquidity Data</button>
+      </div>
+      <div>
+        <h2>Claim bets lost in time</h2>
+        <button type="button" id="claim_lost_in_time_button" class="btn btn-primary">Claim</button>
+      </div>
+    </div>
+  </body>
+</html>
